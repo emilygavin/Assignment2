@@ -1,0 +1,16 @@
+CRUD HTTP Calls
+
+- GET: Get all Passengers - localhost:8080/api/passengers
+
+- POST: Create new passenger: localhost:8080/api/passengers
+Body used: {
+                   "title": "Mr",
+                   "name": "John Doe",
+                   "phoneNumber": "08761248124",
+                   "age": 35,
+                   "id": "8unbi3uv23iojvfi4"
+               }
+
+- DELETE: Delete Passenger by ID: localhost:8080/api/passengers/delete/{{id}}
+
+- GET: Query by Age: localhost:8080/api/passengers/age?ageStart=12&ageStop=35

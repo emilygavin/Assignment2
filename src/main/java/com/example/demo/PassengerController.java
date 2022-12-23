@@ -25,4 +25,14 @@ public class PassengerController {
     public Passenger registerNewPassenger (@RequestBody Passenger passenger) {
         return passengerService.addNewPassenger(passenger);
     }
+
+    @DeleteMapping(value = "/delete/{id}")
+    public void deletePassenger(@PathVariable String id) throws Exception {
+        passengerService.deletePassenger(id);
+    }
+
+    @GetMapping("/age")
+    public List<Passenger> fetchAllPassengersByAgeRange(@RequestParam(name = "ageStart") int age1, @RequestParam(name = "ageStop") int age2){
+        return passengerService.getAllPassengersByAgeRange(age1, age2);
+    }
 }
