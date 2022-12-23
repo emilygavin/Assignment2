@@ -45,4 +45,17 @@ public class PassengerService {
     public boolean exists(String id){
         return passengerRepository.existsById(id);
     }
+
+    public void deletePassenger(String id) throws Exception {
+        if(!exists(id)){
+            throw new Exception("Passenger with this ID does not exist!");
+        }
+        else {
+            passengerRepository.deleteById(id);
+        }
+    }
+
+    public List<Passenger> getAllPassengersByAgeRange(int age1, int age2){
+        return passengerRepository.findByAgeRange(age1, age2);
+    }
 }
